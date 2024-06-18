@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import {CalendarIcon} from "react-native-heroicons/outline";
+import { CalendarIcon } from "react-native-heroicons/outline";
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -18,7 +18,7 @@ export default function TabLayout() {
         options={{
           title: 'Calendar',
           tabBarIcon: ({ color, focused }) => (
-            <CalendarIcon color={color} /> 
+            <CalendarIcon color={color} />
           ),
         }}
       />
