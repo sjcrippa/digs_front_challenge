@@ -1,5 +1,7 @@
 # Digs Calendar Code Challenge
 
+Using <b>node -v 20.9.0</b> and npm.
+
 This is the candaidate test for Digs UI developers. It is NOT pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
 ## Get started
