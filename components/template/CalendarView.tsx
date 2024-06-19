@@ -18,7 +18,7 @@ export default function CalendarView() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 10,
+    marginTop: 21,
   },
   h2: {
     fontSize: 16,
