@@ -1,32 +1,19 @@
-import { ScrollView, StyleSheet, Text } from "react-native";
-import { ThemedView } from "../ThemedView";
-import CalendarCard from "../molecules/CalendarCard";
+import { ScrollView, Text, View } from "react-native";
+import Completed from "../molecules/Completed";
+import Scheduled from "../molecules/Scheduled";
+import Unscheduled from "../molecules/Unscheduled";
 
 export default function CalendarView() {
   return (
-    <ThemedView style={styles.container}>
-      <ThemedView style={styles.calendarContainer}>
-        <ScrollView>
-          <Text style={styles.h2}>June 2024</Text>
-          <CalendarCard />
-        </ScrollView>
-      </ThemedView>
-    </ThemedView>
+    <ScrollView>
+      <View className="flex-1 bg-white">
+        <View className="bg-white px-4">
+          <Text className="mt-[21px] text-base font-bold leading-[19.2px] text-black/80">June 2024</Text>
+          <Completed />
+          <Scheduled />
+          <Unscheduled />
+        </View>
+      </View>
+    </ScrollView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 21,
-  },
-  h2: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: '#fff',
-  },
-  calendarContainer: {
-    flex: 1,
-    paddingHorizontal: 16,
-  }
-})

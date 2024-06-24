@@ -3,6 +3,7 @@ import React from 'react';
 import { CalendarIcon } from "react-native-heroicons/outline";
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import Header from '@/components/Header';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -11,14 +12,15 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
+        headerShown: true,
+        header: () => <Header />,
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Calendar',
-          tabBarIcon: ({ color, focused }) => (
-            <CalendarIcon color={color} />
+          tabBarIcon: () => (
+            <CalendarIcon color='#00B47D' />
           ),
         }}
       />
