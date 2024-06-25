@@ -2,7 +2,13 @@ import { Text, View } from "react-native";
 import { CheckCircleIcon } from "react-native-heroicons/solid";
 import { MapPinIcon } from "react-native-heroicons/solid"
 
+import { useFetch } from "@/hooks/useFetch";
+
 export default function Completed() {
+  const { data, loading } = useFetch("https://xjvq5wtiye.execute-api.us-east-1.amazonaws.com/interview/api/v1/challenge");
+
+  if (loading) return <Text>Loading...</Text>;
+
   return (
     <View className="flex-1">
       <View className="mt-[25px] w-[343px] h-[111px] flex-row">
