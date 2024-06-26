@@ -10,7 +10,7 @@ export function useFetch(url: string) {
     fetch(url)
       .then((response) => response.json())
       .then((data: ChallengeData) => {
-        console.log("Fetched data -> ", JSON.stringify(data, null, 2));
+        // console.log("Fetched data -> ", JSON.stringify(data, null, 2));
         setData(data);
       })
       .finally(() => setLoading(false));

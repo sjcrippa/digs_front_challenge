@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 
-import CalendarView from '@/components/template/CalendarView';
+import CalendarView from '@/components/calendar/CalendarView';
 
 export default function Calendar() {
   return (
