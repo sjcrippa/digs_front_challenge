@@ -51,7 +51,8 @@ export const CalendarItem = (status: string, action: Action, data: ChallengeData
               <MapPinIcon width={10} height={10} color='#FFFFFF' />
               <Text className="text-light text-xs leading-[14.4px]">{data.customer.street}</Text>
             </View>
-            <View className="mt-2 flex flex-row">
+            <View className="mt-2 flex flex-row items-center">
+              <Text className="text-xs text-light">Unscheduled </Text>
               <Text className="text-light text-xs font-normal leading-[14.4px]">{day}</Text>
             </View>
           </View>
