@@ -34,7 +34,7 @@ export default function CalendarItemContainer() {
 
             return (
               <View key={action.id} className={`mt-1 w-[343px] h-[111px] ${action.status === 'Unscheduled' ? 'h-[88px]' : 'h-[111px]'} flex-row`}>
-                <View className="w-8 flex flex-col gap-y-[5px] items-center">
+                <View className="w-8 flex flex-col gap-y-[5px]">
                   <Text className="text-[9px] text-black/60 font-black uppercase">{shortWeekDay}</Text>
                   <Text className={` ${day === 'TBD' ? 'text-[9px] font-black text-black/60' : 'text-xl font-bold text-black/80'}`}>{day}</Text>
                   {actionIcon}
