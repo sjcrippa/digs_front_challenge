@@ -1,13 +1,11 @@
 export const useFormatDate = (isoString: string | undefined) => {
   if (!isoString) {
-    //console.log("isoString is undefined or null");
     return { day: "TBD", month: "", year: "" };
   }
 
   const date = new Date(isoString);
 
   if (isNaN(date.getTime())) {
-    console.log(`Invalid date: ${isoString}`);
     return { day: "TBD", month: "", year: "" };
   }
 
