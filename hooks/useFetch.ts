@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export function useFetch(url: string) {
   const [data, setData] = useState<ChallengeData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);

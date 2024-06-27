@@ -1,13 +1,13 @@
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, View } from "react-native";
 
-import CalendarListContainer from "./content/CalendarListContainer";
+import CalendarItemContainer from "./content/CalendarItemContainer";
 
 export default function CalendarView() {
   return (
     <ScrollView>
       <View className="flex-1 bg-white">
         <View className="bg-white px-4">
-          <CalendarListContainer />
+          <CalendarItemContainer />
         </View>
       </View>
     </ScrollView>
