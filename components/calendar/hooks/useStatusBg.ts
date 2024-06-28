@@ -1,4 +1,4 @@
-export const useStatusClassName = (status: string) => {
+export const useStatusBg = (status: string) => {
   switch (status) {
     case "Completed":
       return "bg-[#00B47D]";

@@ -2,10 +2,10 @@ import { Text, View } from "react-native";
 
 import Loading from "@/components/Loading";
 import { useFetch } from "@/hooks/useFetch";
+import { useStatusBg } from "../hooks/useStatusBg";
 import { monthsNames } from "../constants/Months";
 import { StatusIcon } from "./StatusIcon";
 import { CalendarItem } from "./CalendarItem";
-import { useStatusClassName } from "../hooks/useStatusClassName";
 import { useFormatDate } from "../hooks/useFormatDate";
 import NoMaintenanceScheduled from "./NoMaintenanceScheduled";
 
@@ -27,9 +27,7 @@ export default function CalendarItemContainer() {
           {value.actions.length === 0 ? <NoMaintenanceScheduled /> : ''}
 
           {value.actions.map((action) => {
-            const actionClassName = useStatusClassName(action.status);
-            const actionIcon = StatusIcon(action.status)
-            const statusContent = CalendarItem(action.status, action, data)
+            const actionBg = useStatusBg(action.status);
             const { day, shortWeekDay } = useFormatDate(action.scheduledDate)
 
             return (
@@ -37,10 +35,10 @@ export default function CalendarItemContainer() {
                 <View className="w-8 flex flex-col gap-y-[5px]">
                   <Text className="text-[9px] text-black/60 font-black uppercase">{shortWeekDay}</Text>
                   <Text className={` ${day === 'TBD' ? 'text-[9px] font-black text-black/60' : 'text-xl font-bold text-black/80'}`}>{day}</Text>
-                  {actionIcon}
+                  <StatusIcon status={action.status} />
                 </View>
-                <View className={`w-[311px] ${actionClassName} rounded`}>
-                  {statusContent}
+                <View className={`w-[311px] ${actionBg} rounded`}>
+                  <CalendarItem action={action} data={data} status={action.status} />
                 </View>
               </View>
             )

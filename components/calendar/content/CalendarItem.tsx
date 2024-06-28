@@ -2,9 +2,9 @@ import { Text, View } from "react-native";
 import { MapPinIcon } from "react-native-heroicons/solid";
 
 import { useFormatDate } from "../hooks/useFormatDate";
-import type { Action, ChallengeData } from "@/app/models/ChallengeData";
+import type { CalendarItemProps } from "../types/CalendarItem";
 
-export const CalendarItem = (status: string, action: Action, data: ChallengeData) => {
+export const CalendarItem = ({ status, action, data }: CalendarItemProps) => {
   const { day } = useFormatDate(action.scheduledDate)
 
   switch (status) {
